@@ -90,29 +90,28 @@ const startMockServer = () => {
   });
 
   app.listen(MOCK_PORT, () => {
-    console.log(`✅ Mock API running at http://localhost:${MOCK_PORT}`);
+    console.log(`Mock API running at http://localhost:${MOCK_PORT}`);
   });
 };
 
 const testEndpoints = async () => {
   try {
-    console.log("\n🚀 Testing /stocks/:ticker");
+    console.log("\nTesting /stocks/:ticker");
     await axios.get(`${BASE_URL}/stocks/AAPL?minutes=30`);
 
-    console.log("🚀 Testing /stockcorrelation");
+    console.log("Testing /stockcorrelation");
     await axios.get(
       `${BASE_URL}/stockcorrelation?ticker1=AAPL&ticker2=MSFT&minutes=30`
     );
-
-    console.log("🚀 Testing /evaluation-service/stocks/:ticker");
+    console.log(" Testing /evaluation-service/stocks/:ticker");
     await axios.get(`${BASE_URL}/evaluation-service/stocks/NVDA?minutes=50`);
 
-    console.log("🚀 Testing /evaluation-service/stockcorrelation");
+    console.log("Testing /evaluation-service/stockcorrelation");
     await axios.get(
       `${BASE_URL}/evaluation-service/stockcorrelation?ticker1=NVDA&ticker2=MSFT&minutes=50`
     );
 
-    console.log("\n All endpoints responded successfully!");
+    console.log("\nAll endpoints responded successfully!");
   } catch (error) {
     console.error(" Mock API test failed:", error.message);
   }
