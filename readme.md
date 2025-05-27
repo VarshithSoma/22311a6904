@@ -1,4 +1,4 @@
-## 🔧 Setup
+## Setup
 
 1. Install dependencies:
 
@@ -14,7 +14,7 @@ BEARER_TOKEN=your-token-here
 
 ---
 
-## ▶️ Run the server
+## Run the server
 
 ```bash
 node app.js
