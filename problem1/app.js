@@ -1,5 +1,6 @@
 const express = require("express");
 const routes = require("./routes");
+const PORT = 3000;
 require("dotenv").config();
 
 const app = express();
@@ -11,7 +12,6 @@ app.get("/", (req, res) => {
 
 app.use("/numbers", routes);
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
